@@ -29,8 +29,6 @@ impl Clicker {
             let mut enigo = Enigo::new();
 
             while active_clone.load(Ordering::Relaxed) {
-                let (x, y) = Enigo::mouse_location();
-                enigo.mouse_move_to(x, y);
                 enigo.mouse_click(enigo::MouseButton::Left);
 
                 thread::sleep(Duration::from_millis(delay_ms));
