@@ -18,8 +18,8 @@
     let
       overlays = {
         default = final: prev: {
-          bytelab = (final.callPackage naersk { }).buildPackage {
-            pname = "bytelabs";
+          calibrated = (final.callPackage naersk { }).buildPackage {
+            pname = "calibrated";
             src = ./.;
           };
         };
@@ -84,7 +84,7 @@
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath runtimeLibs;
         };
 
-        packages.default = pkgs.bytelab;
+        packages.default = pkgs.calibrated;
         formatter =
           (treefmt-nix.lib.evalModule pkgs (_: {
             projectRootFile = ".git/config";
