@@ -5,7 +5,7 @@ A highly customizable autoclicker written primarily in Rust, built with the Iced
 ---
 
 >[!NOTE]
-> The autoclicking functionality is already implemented, but the project is currently in a **proof-of-concept** stage. The current UI and overall design do **not** reflect the final vision—expect significant changes and improvements.
+> The autoclicking functionality is already implemented, but the project is currently in a **proof-of-concept** stage. The current UI and overall design do **not** reflect the final vision—expect significant changes and improvements. Also, currently it does not work on Wayland because of issues with Enigo.
 
 ---
 
