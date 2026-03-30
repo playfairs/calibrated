@@ -38,6 +38,27 @@ struct CalibratedApp {
 
 unsafe extern "C" {
     unsafe fn testing_func() -> *const libc::c_char;
+    unsafe fn NSUIInterfaceStyleCollect() -> i32;
+}
+
+#[derive(Debug, Clone)]
+pub enum NSUIInterfaceStyle {
+    Light,
+    Dark,
+}
+
+impl From<i32> for NSUIInterfaceStyle {
+    fn from(value: i32) -> Self {
+        match value {
+            1 => Self::Dark,
+            _ => Self::Light,
+        }
+    }
+}
+
+pub fn get_interface_style() -> NSUIInterfaceStyle {
+    let result = unsafe { NSUIInterfaceStyleCollect() };
+    NSUIInterfaceStyle::from(result)
 }
 
 pub fn testing() -> Option<String> {
@@ -117,8 +138,15 @@ impl Application for CalibratedApp {
         )
     }
 
+    fn theme(&self) -> Self::Theme {
+        match get_interface_style() {
+            NSUIInterfaceStyle::Light => Theme::Light,
+            NSUIInterfaceStyle::Dark => Theme::Dark,
+        }
+    }
+
     fn title(&self) -> String {
-        String::new()
+        String::from("Calibrated")
     }
 
     fn update(&mut self, message: Message) -> Command<Message> {
@@ -130,6 +158,7 @@ impl Application for CalibratedApp {
                         self.cps = cps;
                     }
                     self.clicker_active.store(true, Ordering::Relaxed);
+                    std::thread::sleep(std::time::Duration::new(0, 10000000));
                     self.start_clicker_thread();
                 } else {
                     self.cps = 0.0;
@@ -155,11 +184,6 @@ impl Application for CalibratedApp {
         } else {
             "■ STOPPED"
         };
-        let status_color = if self.is_running {
-            iced::Color::from_rgb(0.2, 0.8, 0.2)
-        } else {
-            iced::Color::from_rgb(0.8, 0.2, 0.2)
-        };
 
         let content = column![
             container(row![
@@ -169,7 +193,7 @@ impl Application for CalibratedApp {
                         .style(iced::Color::from_rgb(0.1, 0.4, 0.8))
                 )
                 .width(Length::Fill),
-                container(text(status).size(14).style(status_color))
+                container(text(status).size(14))
                     .padding([8, 16])
                     .style(iced::theme::Container::Box)
             ])
@@ -200,9 +224,7 @@ impl Application for CalibratedApp {
             .padding([0, 35]),
             container(
                 column![
-                    text("CLICK INTERVAL")
-                        .size(12)
-                        .style(iced::Color::from_rgb(0.5, 0.5, 0.5)),
+                    text("CLICK INTERVAL").size(12),
                     row![
                         container(
                             text_input::<Message, Theme, Renderer>("0", &self.hours)
