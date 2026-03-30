@@ -87,7 +87,7 @@
         packages.default = pkgs.calibrated;
         formatter =
           (treefmt-nix.lib.evalModule pkgs (_: {
-            projectRootFile = ".git/config";
+            projectRootFile = "flake.nix";
             programs = {
               nixfmt.enable = true;
               nixf-diagnose.enable = true;
