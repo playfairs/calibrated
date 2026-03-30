@@ -1,5 +1,5 @@
-pub mod settings;
 pub mod profiles;
+pub mod settings;
 
-pub use settings::Settings;
 pub use profiles::{Profile, ProfileManager};
+pub use settings::Settings;

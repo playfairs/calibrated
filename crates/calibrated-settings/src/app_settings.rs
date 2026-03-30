@@ -15,11 +15,11 @@ impl AppSettings {
             default_delay: 100,
         }
     }
-    
+
     pub fn load() -> Result<Self, Box<dyn std::error::Error>> {
         Ok(Self::new())
     }
-    
+
     pub fn save(&self) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }

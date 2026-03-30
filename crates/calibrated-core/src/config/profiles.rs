@@ -1,5 +1,4 @@
-pub struct Profile {
-}
+pub struct Profile {}
 
 impl Profile {
     pub fn new() -> Self {
@@ -7,8 +6,7 @@ impl Profile {
     }
 }
 
-pub struct ProfileManager {
-}
+pub struct ProfileManager {}
 
 impl ProfileManager {
     pub fn new() -> Self {

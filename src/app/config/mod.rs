@@ -1,2 +1,2 @@
-pub mod settings;
 pub mod profiles;
+pub mod settings;

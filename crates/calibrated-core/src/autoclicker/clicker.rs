@@ -1,11 +1,9 @@
-pub struct Clicker {
-}
+pub struct Clicker {}
 
 impl Clicker {
     pub fn new() -> Self {
         Self {}
     }
-    
-    pub fn click(&self) {
-    }
+
+    pub fn click(&self) {}
 }
