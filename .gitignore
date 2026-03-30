@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+*.swp
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Rust
+*target*
+**/*.rs.bk
+Cargo.lock
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Nix
+result
+/nix/
+*.drv
+
+# Misc
+*.log
+*.tmp

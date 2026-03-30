@@ -1,0 +1,18 @@
+[workspace]
+members = [
+    "crates/calibrated-core",
+    "crates/calibrated-ui", 
+    "crates/calibrated-settings",
+]
+
+[package]
+name = "calibrated"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+iced = "0.12.1"
+calibrated-core = { path = "crates/calibrated-core" }
+calibrated-ui = { path = "crates/calibrated-ui" }
+calibrated-settings = { path = "crates/calibrated-settings" }
+enigo = "0.0.14"

@@ -1,0 +1,10 @@
+{
+  "app": {
+    "theme": "dark",
+    "auto_start": false
+  },
+  "autoclicker": {
+    "default_delay": 100,
+    "randomization": 0
+  }
+}
