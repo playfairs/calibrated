@@ -8,7 +8,7 @@ members = [
 [package]
 name = "calibrated"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 iced = "0.12.1"
@@ -16,3 +16,4 @@ calibrated-core = { path = "crates/calibrated-core" }
 calibrated-ui = { path = "crates/calibrated-ui" }
 calibrated-settings = { path = "crates/calibrated-settings" }
 enigo = "0.0.14"
+libc = "0.2.183"

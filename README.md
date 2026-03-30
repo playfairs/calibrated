@@ -1,6 +1,6 @@
 # Calibrated
 
-A highly customizable autoclicker written in Rust, built with the Iced UI library.
+A highly customizable autoclicker written primarily in Rust, built with the Iced UI library.
 
 ---
 
