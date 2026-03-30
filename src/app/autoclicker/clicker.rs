@@ -19,7 +19,7 @@ impl Clicker {
 
     pub fn start(&mut self, delay_ms: u64) {
         if self.active.load(Ordering::Relaxed) {
-            return; // Already running
+            return;
         }
 
         self.active.store(true, Ordering::Relaxed);

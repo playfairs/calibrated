@@ -109,7 +109,7 @@ fn main() -> iced::Result {
             size: iced::Size::new(480.0, 600.0),
             min_size: Some(iced::Size::new(480.0, 600.0)),
             max_size: Some(iced::Size::new(480.0, 600.0)),
-            resizable: false,
+            resizable: true,
             ..Default::default()
         },
         default_text_size: iced::Pixels(14.0),
