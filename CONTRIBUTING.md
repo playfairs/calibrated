@@ -3,7 +3,7 @@
 First off, thank you for considering contributing.
 Whether it’s bug reports, feature requests, or code, your help makes this project better for everyone.
 
-===
+---
 
 ## Getting Started
 
@@ -59,6 +59,6 @@ We **strongly recommend using [Nix](https://nixos.org/) for development** to ens
 If you’re unsure about something, open an issue or reach out in discussions.  
 We’re happy to help new contributors get set up.
 
-===
+---
 
 Thanks again for helping improve Calibrated. 💜

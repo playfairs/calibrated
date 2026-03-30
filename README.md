@@ -30,6 +30,6 @@ A highly customizable autoclicker written in Rust, built with the Iced UI librar
 
 We welcome contributions. Please read our [Contributing Guide](CONTRIBUTING.md) for instructions on setting up your development environment, submitting issues, and creating pull requests.
 
-===
+---
 
 Made with ❤️ by Playfairs.
