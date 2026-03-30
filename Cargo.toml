@@ -1,19 +1,30 @@
-[dependencies]
-iced = "0.12.1"
-calibrated-core = {path = "crates/calibrated-core"}
-calibrated-ui = {path = "crates/calibrated-ui"}
-calibrated-settings = {path = "crates/calibrated-settings"}
-enigo = "0.0.14"
-libc = "0.2.183"
-
-[package]
-name = "calibrated"
-version = "0.1.0"
-edition = "2024"
-
 [workspace]
+resolver = "3"
 members = [
   "crates/calibrated-core",
+  "crates/swift_bindings",
   "crates/calibrated-ui",
   "crates/calibrated-settings"
 ]
+default-members = ["crates/calibrated-core"]
+
+[workspace.dependencies]
+iced = "0.12.1"
+enigo = "0.6.1"
+libc = "0.2.183"
+
+[workspace.dependencies.calibrated-core]
+path = "crates/calibrated-core"
+
+[workspace.dependencies.calibrated-ui]
+path = "crates/calibrated-ui"
+
+[workspace.dependencies.calibrated-settings]
+path = "crates/calibrated-settings"
+
+[workspace.dependencies.swift_bindings]
+path = "crates/swift_bindings"
+
+[workspace.package]
+publish = false
+edition = "2024"

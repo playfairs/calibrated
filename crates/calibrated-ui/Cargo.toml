@@ -1,5 +1,5 @@
 [dependencies]
-iced = "0.12.1"
+iced.workspace = true
 
 [package]
 name = "calibrated-ui"

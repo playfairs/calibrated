@@ -5,7 +5,7 @@ use std::process::Command;
 fn main() {
     if cfg!(target_os = "macos") {
         let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
-        let swift_file = PathBuf::from("Swift/Bindings.swift");
+        let swift_file = PathBuf::from("Bindings.swift");
         let dylib_path = out_dir.join("libaxbridge.dylib");
         let status = Command::new("swiftc")
             .args(&[

@@ -1,7 +1,7 @@
 mod app;
 
 use app::App;
-use iced::{Application, Command, Element, Length, Settings, widget::container};
+use iced::{widget::container, Application, Command, Element, Length, Settings};
 
 #[derive(Debug, Clone)]
 pub enum Message {
@@ -109,7 +109,7 @@ fn main() -> iced::Result {
             size: iced::Size::new(480.0, 600.0),
             min_size: Some(iced::Size::new(480.0, 600.0)),
             max_size: Some(iced::Size::new(480.0, 600.0)),
-            resizable: true,
+            resizable: false,
             ..Default::default()
         },
         default_text_size: iced::Pixels(14.0),

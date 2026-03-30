@@ -1,6 +1,6 @@
-use enigo::{Enigo, MouseControllable};
-use std::sync::Arc;
+use enigo::{Enigo, Mouse, Settings};
 use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::Arc;
 use std::thread;
 use std::time::Duration;
 
@@ -19,17 +19,19 @@ impl Clicker {
 
     pub fn start(&mut self, delay_ms: u64) {
         if self.active.load(Ordering::Relaxed) {
-            return;
+            return; // Already running
         }
 
         self.active.store(true, Ordering::Relaxed);
         let active_clone = self.active.clone();
 
         let handle = thread::spawn(move || {
-            let mut enigo = Enigo::new();
+            let mut enigo = Enigo::new(&Settings::default()).unwrap();
 
             while active_clone.load(Ordering::Relaxed) {
-                enigo.mouse_click(enigo::MouseButton::Left);
+                enigo
+                    .button(enigo::Button::Left, enigo::Direction::Click)
+                    .unwrap();
 
                 thread::sleep(Duration::from_millis(delay_ms));
             }

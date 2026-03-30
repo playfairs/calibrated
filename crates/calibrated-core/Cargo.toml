@@ -1,4 +1,7 @@
 [dependencies]
+iced.workspace = true
+enigo.workspace = true
+swift_bindings.workspace = true
 
 [package]
 name = "calibrated-core"
