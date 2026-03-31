@@ -1,8 +1,8 @@
 import AppKit
 import ApplicationServices
 
-@_cdecl("NSUIInterfaceStyleCollect")
-public func CollectAppleUIInterfaceStyle() -> Int32 {
+@_cdecl("NSAppearanceEffectiveAppearance")
+public func CABI_NSAppearanceEffectiveAppearance() -> Int32 {
     let appearance = NSApp?.effectiveAppearance ?? NSAppearance.currentDrawing()
     let bestMatch = appearance.bestMatch(from: [.darkAqua, .aqua])
 
